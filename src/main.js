@@ -1,14 +1,11 @@
 import { fetchImages } from "./js/pixabay-api";
-import { renderImage } from "./js/render-functions";
-import { showError } from "./js/render-functions";
-import { clearGallery } from "./js/render-functions";
-import { showLoad } from "./js/render-functions";
-import { hideLoad } from "./js/render-functions";
-import { moduleLightbox } from "./js/render-functions";
-import { refreshgalleries } from "./js/render-functions";
+import { renderImage, showError, clearGallery, showLoad, hideLoad, refreshgalleries } from "./js/render-functions";
+// import { moduleLightbox } from "./js/render-functions";
+
 
 const form = document.querySelector('.form-search');
 const formInput = document.querySelector('.form-search input[name="query"]');
+let galleries = null;
 
 form.addEventListener ('submit', handleSubmit);
 
@@ -33,7 +30,7 @@ function handleSubmit(event) {
         );
       } else {
           renderImage(images);
-          moduleLightbox();
+        formInput.value = '';
           refreshgalleries();
       }
     })

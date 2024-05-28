@@ -16,7 +16,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+ body {
+  padding: 20px;
+    background-color: #f8f9fa;
+ }
  .form-search {
   display: flex;
   width: 1158px;
@@ -72,23 +75,22 @@
    display: flex;
    flex-wrap: wrap;
    gap: 24px;
- 
  }
 
  .gallery-item { 
-  width: 360px;
+  flex-basis: calc((100% - 48px) / 3);
   height: auto;
   flex-shrink: 0;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  
- 
-   
  }
-
+a {
+      display: inline-block;
+      height: 232px;
+    };
 
  .gallery-image {
-  height: auto;
- display: block;
+   height: 152px;
+   object-fit: cover;
  }
 
  .info {
@@ -113,6 +115,10 @@ font-weight: 600;
 line-height: 1.33;
 }
 
+
+.loader.hidden {
+  display: none;
+}
 .loader {
   width: 48px;
   height: 48px;

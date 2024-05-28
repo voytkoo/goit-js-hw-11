@@ -11,6 +11,7 @@ export function fetchImages(query) {
   return axios.get(url)
     .then(response => response.data.hits)
     .catch(error => {
-      throw new error('Error fetching images:');
+      console.error('Error fetching images:', error);
+      throw new Error('Failed to fetch images')
     });
 }

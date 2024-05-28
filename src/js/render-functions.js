@@ -16,7 +16,6 @@ let galleries = null;
 export function renderImage(images) {
 
   gallery.innerHTML = markup(images);
-  refreshgalleries();
 }
 
 function markup(images) {
