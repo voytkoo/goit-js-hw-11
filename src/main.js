@@ -5,7 +5,7 @@ import { renderImage, showError, clearGallery, showLoad, hideLoad, refreshgaller
 
 const form = document.querySelector('.form-search');
 const formInput = document.querySelector('.form-search input[name="query"]');
-let galleries = null;
+// let galleries = null;
 
 form.addEventListener ('submit', handleSubmit);
 

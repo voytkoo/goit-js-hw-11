@@ -51,11 +51,13 @@ export function clearGallery() {
 }
 
 export function showLoad() {
-    loader.classList.remove('hidden');
+  loader.style.display = 'block';
+    // loader.classList.remove('hidden');
 }
  
 export function hideLoad() {
-    loader.classList.add('hiden');
+  loader.style.display = 'none';
+    // loader.classList.add('hidden');
 }
 
 export function moduleLightbox() {
