@@ -9,21 +9,23 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 const gallery = document.querySelector('.gallery');
-const loader = document.querySelector('loader');
+const loader = document.querySelector('.loader');
+let galleries = null;
 
 
+export function renderImage(images) {
 
-export function renderImage {
-
-    gallery.innerHTML = markup(images);
+  gallery.innerHTML = markup(images);
+  refreshgalleries();
+}
 
 function markup(images) {
   return images.map(image  =>
     `<li class="gallery-item">
-  <a class="gallery-link" href="${image.webformatURL}">
+  <a class="gallery-link" href="${image.largeImageURL}">
     <img
       class="gallery-image"
-      src="${image.largeImageURL}"
+      src="${image.webformatURL}"
       alt="${image.tags}"
     />
   </a>
@@ -35,10 +37,8 @@ function markup(images) {
       </ul>
 </li>`
   ).join("");
-};
-
-
 }
+
 
 export function showError(message) {
     iziToast.error({
@@ -52,11 +52,11 @@ export function clearGallery() {
 }
 
 export function showLoad() {
-    loader.style.display = 'block';
+    loader.classList.remove('hidden');
 }
  
 export function hideLoad() {
-    loader.style.display = 'none';
+    loader.classList.add('hiden');
 }
 
 export function moduleLightbox() {
