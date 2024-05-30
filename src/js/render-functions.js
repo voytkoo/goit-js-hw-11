@@ -10,8 +10,10 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
-let galleries = null;
-
+let galleries = new SimpleLightbox('.gallery a', {
+        captionsData: 'alt',
+        captionDelay: 250
+    });
 
 export function renderImage(images) {
 
@@ -60,16 +62,9 @@ export function hideLoad() {
     // loader.classList.add('hidden');
 }
 
-export function moduleLightbox() {
-    galleries = new SimpleLightbox('.gallery a', {
-        captionsData: 'alt',
-        captionDelay: 250
-    });
-}
+
+
 export function refreshgalleries() {
-  if (galleries) {
     galleries.refresh();
-  } else {
-    moduleLightbox();
-  }
+
 }
